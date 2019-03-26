@@ -1,5 +1,6 @@
 import math as m
 import numpy as np
+import satellite
 
 
 #Constants
@@ -10,29 +11,7 @@ magmomentEarth = 7.96e15 #Magnetic moment of earth in [Tesla/m3]
 rmsSINavg = 0.707 #Sinusoidal RMS average
 
 
-FireSat = {
-            "M": 215, #Mass [kg]
-            "Iz": 90, #Moment of Inertia [Kg.m2] Ix = Iz
-            "Iy" : 60, #Moment of Inertia [Kg.m2]
-            "orbitAlt" : 700, #Alt [Km], Circular Orbit
-            "slewRate" : 30, #0.1 [deg/s]
-            "pointingAcc" : 0.1, #[deg]
-            "surfaceArea" : 2*1.5, #Surface area cross section of [2m by 1.5m]
-            "deltaCOGCOPsolar": 0.3, #Center of gravity to Center of solar pressure difference in [m]
-            "coefReflectivity": 0.6, #Coefficent of Reflectivity
-            "angleIncidence": 0, #Angle of incidence of the sun in [deg]
-            "residualDipole": 1, #Spacecraft magnetic dipole [A.m2]
-            "atmosDensityRho": 1e-13, #Atmospheric density Rho [kg/m3]
-            "dragCoefCd": 2.0, #Drag Coefficient usually between 2 and 2.5
-            "surfAreaAero": 3, #Surface Area in [m2]
-            "satVelocity": 7504,   #Velocity of sat in [m/s]
-            "deltaCOPCOGaero": 0.2, #Center of gravity to Center of aerodynamic pressure difference in [m]
-            "marginFactor": 0, #Margin factor for required counter torque needed to counteract disturbances
-            "slewTime": 600, #Slew time in [s]
-            "orbitalPeriod":1482, #Orbital period in [s]
-            "yawRollAccuracy":0.1, #Yaw accuracy required
-
-         }
+FireSat = satellite.Satellite() #default parameters are firesat
 
 WinSAT = {
             "M": 30, #Mass [kg]
