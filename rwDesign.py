@@ -1,12 +1,15 @@
 from numpy import *
 from scipy.spatial.transform import Rotation as R
 
+
 '''
 Notaion:
 
 
 
 '''
+#constants
+
 
 class Satellite:
     def __init__(self):
@@ -32,6 +35,11 @@ class Satellite:
 		z - Iz, principal axis of inertia
 		y - Iy, principal axis of inertia
 		x - Ix, principal axis of inertia
+
+
+
+
+
     	'''
     	self.F_eci = eye(3)
     	self.Ro_e   = zeros(3)
@@ -41,7 +49,7 @@ class Satellite:
     	self.angularMomentum_e = zeros(3) #Globally Referenced
 
     def setCOM_eci(self,vector):
-    	self.COM_eci = vector 
+    	self.COM_eci = vector
 
     def setAngularMomentum_e(self,vector):
     	self.angularMomentum_e = vector
@@ -75,6 +83,17 @@ class Satellite:
 
 	def rotMax(self,a,b):
 		Ra_b = eye(3) + 2*nContraint*sFunc()
-	
-	def sFunc(, nPower=1):
+
+	def sFunc(self, nPower=1):
 		return array([[0,-e[2],e[1]],[e[2],0,-e[0]],[-e[1],e[0],0]])
+
+	def getRi_b(self,[])
+
+	
+
+
+
+
+
+
+

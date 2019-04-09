@@ -1,46 +1,26 @@
 class Satellite:
-    def __init__(self,
-        mass = 215,
-        inertiaZ = 90,
-        inertiaY = 60,
-        orbitAlt = 700,
-        slewRate = 30,
-        pointingAcc = 0.1,
-        surfaceArea = 2*1.5,
-        deltaCOGCOPsolar = 0.3,
-        coefReflectivity = 0.6,
-        angleIncidence = 0,
-        residualDipole = 1,
-        atmosDensityRho = 1e-13,
-        dragCoefCd = 2.0,
-        surfAreaAero = 3,
-        satVelocity = 7504,
-        deltaCOPCOGaero = 0.2,
-        marginFactor = 0,
-        slewTime = 600,
-        orbitalPeriod = 1482,
-        yawRollAccuracy = 0.1):
+    def __init__(self,param):
 
-        self.mass = mass
-        self.inertia_z = inertiaZ
-        self.inertia_y = inertiaY
-        self.orbit_altitude = orbitAlt
-        self.slew_rate = slewRate
-        self.pointing_accuracy = pointingAcc
-        self.surface_area = surfaceArea
-        self.deltaCOGCOPsolar = deltaCOGCOPsolar
-        self.coef_of_reflectivity = coefReflectivity
-        self.angle_of_incidence = angleIncidence
-        self.magnetic_dipole = residualDipole
-        self.atmospheric_density_rho = atmosDensityRho
-        self.drag_coefficient = dragCoefCd
-        self.surface_area_aero = surfAreaAero
-        self.satellite_velocity = satVelocity
-        self.deltaCOPCOGaero = deltaCOPCOGaero
-        self.margin_factor = marginFactor
-        self.slew_time = slewTime
-        self.orbital_period = orbitalPeriod
-        self.yaw_roll_accuracy = yawRollAccuracy
+        self.mass = param["mass"]
+        self.inertia_z = param["inertiaZ"]
+        self.inertia_y = param["inertiaY"]
+        self.orbit_altitude = param["orbitAlt"]
+        self.slew_rate = param["slewRate"]
+        self.pointing_accuracy = param["pointingAcc"]
+        self.surface_area = param["surfaceArea"]
+        self.deltaCOGCOPsolar = param["deltaCOGCOPsolar"]
+        self.coef_of_reflectivity = param["coefReflectivity"]
+        self.angle_of_incidence = param["angleIncidence"]
+        self.magnetic_dipole = param["residualDipole"]
+        self.atmospheric_density_rho = param["atmosDensityRho"]
+        self.drag_coefficient = param["dragCoefCd"]
+        self.surface_area_aero = param["surfAreaAero"]
+        self.satellite_velocity = param["satVelocity"]
+        self.deltaCOPCOGaero = param["deltaCOPCOGaero"]
+        self.margin_factor = param["marginFactor"]
+        self.slew_time = param["slewTime"]
+        self.orbital_period = param["orbitalPeriod"]
+        self.yaw_roll_accuracy = param["yawRollAccuracy"]
 
     def set_mass(self, mass):
         self.mass = mass
